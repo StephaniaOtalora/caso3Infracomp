@@ -23,7 +23,7 @@ public class Main {
 	private static String filename = "./docs/rendimiento.txt";
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		MyMonitor.start();
 		System.out.println("Inicializando");
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -51,8 +51,7 @@ public class Main {
 					System.out.println("No se escogió un algoritmo correcto");
 				}
 			}
-			MyMonitor.start();
-			Thread.sleep(1000);
+			
 			System.out.println("Generando Hash");
 			byte[] hash = Encriptado.generar_codigo(textoClaro, al);
 			String hex = imprimirHexa(hash);
@@ -80,10 +79,8 @@ public class Main {
 		try
 		{	
 			ArrayList<String> rendimientos = MyMonitor.getRendimientos();
-			System.out.println("AAAAAAAAAAAAAAAAAAAAAAA"+ rendimientos.get(0));
 			fichero = new FileWriter(filename);
 			pw = new PrintWriter(fichero);
-			System.out.println("ENTRO");
 			for (int i = 0; i <rendimientos.size() ; i++) {
 				pw.println(rendimientos.get(i));
 				System.out.println(rendimientos.get(i));
