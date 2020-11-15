@@ -61,7 +61,6 @@ public class EncriptadoThread extends Thread{
 		{ 
 			// Next character of input added 
 			String newPrefix = prefix + set[i];
-			System.out.println(newPrefix);
 			verificar(newPrefix);
 
 			// k is decreased, because  
